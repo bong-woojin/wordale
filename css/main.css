@@ -108,7 +108,7 @@ header h1 {
   gap: 5px;
 }
 
-.timer span {
+#timer {
   display: block;
   text-align: center;
 }

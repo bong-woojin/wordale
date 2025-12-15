@@ -1,5 +1,3 @@
-const 정답 = "APPLE";
-
 let index = 0;
 let attempts = 0;
 let timer;
@@ -27,10 +25,15 @@ function appStart() {
     }
   };
 
-  const handleEnterKey = () => {
+  const handleEnterKey = async () => {
     if (attempts >= 6) return;
 
     let 맞은_갯수 = 0;
+
+    //서버에서 정답을 받아오는 코드
+    const 응답 = await fetch("/answer");
+    const 정답 = await 응답.json(); //이렇게 서버에 요청을 보내야하는구나 정도
+    // const 정답 = 정답_객체.answer;
 
     for (let i = 0; i < 5; i++) {
       const block = document.querySelector(
